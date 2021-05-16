@@ -30,7 +30,7 @@ public class CreatePDF {
     }
     public void Create(String numberpdf) throws IOException {
       	
-    	Document document = new Document(); //создание класса Document
+    	Document document = new Document(); //Г±Г®Г§Г¤Г Г­ГЁГҐ ГЄГ«Г Г±Г±Г  Document
 		try {
 			
 			filepath = new File("").getCanonicalPath();
@@ -43,7 +43,7 @@ public class CreatePDF {
 			}
 			filepath=abspath+"Check.pdf";
 			filepath="/tmp/Check.pdf"; */
-			filepath="/Check1.pdf";
+			filepath="/Check.pdf";
 			
 						
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
@@ -73,7 +73,7 @@ public class CreatePDF {
 			e1.printStackTrace();
 		}
 	    
-	  //организация перехода на следующую строку
+	  //Г®Г°ГЈГ Г­ГЁГ§Г Г¶ГЁГї ГЇГҐГ°ГҐГµГ®Г¤Г  Г­Г  Г±Г«ГҐГ¤ГіГѕГ№ГіГѕ Г±ГІГ°Г®ГЄГі
 		 paragraph.clear();
 		 String string_pdf3 = " ";
 		 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
@@ -85,7 +85,7 @@ public class CreatePDF {
 			}
     	
 	    /*
-	  //добавление изображения в pdf
+	  //Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГЁГ§Г®ГЎГ°Г Г¦ГҐГ­ГЁГї Гў pdf
 	    URL url = getClass().getResource("/picture/ugatu.png");
 	    Image img = null;
 		try {
@@ -103,7 +103,7 @@ public class CreatePDF {
 			e2.printStackTrace();
 		}
 		
-		img.setAbsolutePosition(90, 500); //позиционирование изображения в PDF
+		img.setAbsolutePosition(90, 500); //ГЇГ®Г§ГЁГ¶ГЁГ®Г­ГЁГ°Г®ГўГ Г­ГЁГҐ ГЁГ§Г®ГЎГ°Г Г¦ГҐГ­ГЁГї Гў PDF
 		
 		try {
 				document.add(img);
@@ -112,7 +112,7 @@ public class CreatePDF {
 			}
 	    
 	    
-		 //организация перехода на следующую строку
+		 //Г®Г°ГЈГ Г­ГЁГ§Г Г¶ГЁГї ГЇГҐГ°ГҐГµГ®Г¤Г  Г­Г  Г±Г«ГҐГ¤ГіГѕГ№ГіГѕ Г±ГІГ°Г®ГЄГі
 		 paragraph.clear();
 		 String string_pdf3 = " ";
 		 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
@@ -124,8 +124,8 @@ public class CreatePDF {
 			}
 	    */
 		 
-		//добавление таблицы
-		 PdfPTable table = new PdfPTable(4); //создание таблицы с 4 столбцами
+		//Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГІГ ГЎГ«ГЁГ¶Г»
+		 PdfPTable table = new PdfPTable(4); //Г±Г®Г§Г¤Г Г­ГЁГҐ ГІГ ГЎГ«ГЁГ¶Г» Г± 4 Г±ГІГ®Г«ГЎГ¶Г Г¬ГЁ
 		 addHeader(table);
 		 addRows(table);
 		 
@@ -135,12 +135,12 @@ public class CreatePDF {
 			e.printStackTrace();
 		}
 	    
-	    document.close(); //закрытие и сохранение документа PDF
+	    document.close(); //Г§Г ГЄГ°Г»ГІГЁГҐ ГЁ Г±Г®ГµГ°Г Г­ГҐГ­ГЁГҐ Г¤Г®ГЄГіГ¬ГҐГ­ГІГ  PDF
     }
     
 private void addRows(PdfPTable table) {
 		
-		//заполнение таблицы вводимыми значения в текстовые поля на главной форме
+		//Г§Г ГЇГ®Г«Г­ГҐГ­ГЁГҐ ГІГ ГЎГ«ГЁГ¶Г» ГўГўГ®Г¤ГЁГ¬Г»Г¬ГЁ Г§Г­Г Г·ГҐГ­ГЁГї Гў ГІГҐГЄГ±ГІГ®ГўГ»ГҐ ГЇГ®Г«Гї Г­Г  ГЈГ«Г ГўГ­Г®Г© ГґГ®Г°Г¬ГҐ
 		String cell1 = Calc.NumberGet;
 		String cell2 = Calc.GroupGet;
 		String cell3 = Calc.FIOGet;
@@ -151,7 +151,7 @@ private void addRows(PdfPTable table) {
 	    table.addCell(cell3);
 	    table.addCell(cell4);
 		
-	    //выше должен быть текст на русском языке, как его вывести можно посмотреть в справке.
+	    //ГўГ»ГёГҐ Г¤Г®Г«Г¦ГҐГ­ ГЎГ»ГІГј ГІГҐГЄГ±ГІ Г­Г  Г°ГіГ±Г±ГЄГ®Г¬ ГїГ§Г»ГЄГҐ, ГЄГ ГЄ ГҐГЈГ® ГўГ»ГўГҐГ±ГІГЁ Г¬Г®Г¦Г­Г® ГЇГ®Г±Г¬Г®ГІГ°ГҐГІГј Гў Г±ГЇГ°Г ГўГЄГҐ.
 	}
 
 private void addHeader(PdfPTable table) {
