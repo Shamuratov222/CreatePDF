@@ -14,8 +14,8 @@
 <p><strong>FIO:</strong> ${FIO}</p>
 <p><strong>Points:</strong> ${Points}</p>
 
-<a href="/Check1.pdf"> Открыть PDF-файл</a>
-<a href="/Check1.pdf" download> Скачать PDF-файл</a>
+<a href="/Check.pdf"> Открыть PDF-файл</a>
+<a href="/Check.pdf" download> Скачать PDF-файл</a>
 
 <form action="${pageContext.request.contextPath}/Form.jsp">
     <input type="submit" name="sign" value="Назад к генерации PDF-файла">
